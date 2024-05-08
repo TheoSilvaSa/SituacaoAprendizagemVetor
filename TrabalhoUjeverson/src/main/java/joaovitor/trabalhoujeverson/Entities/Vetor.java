@@ -4,25 +4,65 @@
  */
 package joaovitor.trabalhoujeverson.Entities;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Aluno
  */
+
 public class Vetor {
     
-    Ponto a;
-    Ponto b;
+    int coordenadaX, coordenadaY, coordenadaZ;
     
-    public Vetor(Ponto a, Ponto b){
-        this.a = a;
-        this.b = b;
+    
+    public Vetor(int x, int y, int z){
+        this.coordenadaX = x;
+        this.coordenadaY = y;
+        this.coordenadaZ = z;
+    }
+    
+    public Vetor(){}
+    
+    public void registrarVetor(){
+        this.coordenadaX = 0;
+        this.coordenadaY = 0;
+        this.coordenadaZ = 0;
+        int x,y,z;
+        
+        System.out.println("Registrando o Vetor");
+        
+        System.out.println("X: "); 
+        x = readInt(); 
+        
+        System.out.println("Y: "); 
+        y = readInt();
+        
+        System.out.println("Z: (Coloque ZERO se vc deseja um vetor 2D)"); 
+        z = readInt();
+        
+        this.coordenadaX = x;
+        this.coordenadaY = y;
+        this.coordenadaZ = z;
+        System.out.println("Ponto Registrado com Sucesso!");
     }
     
     public String dadosVetor(){
-        return "-------------------------------------------------" + "\n" +
-               "Dados do ponto A: " + a.dadosPonto()+ "\n" +
-               "Dados do ponto B: " + b.dadosPonto()+ "\n" +
-               "-------------------------------------------------";
+        return  "Vetor("+this.coordenadaX+ ","+this.coordenadaY+ ","+ this.coordenadaZ+ ")";
     }
+    
+    static Scanner scanner = new Scanner(System.in);
+    static int readInt() {
+		while(true) {
+			try {
+				return Integer.parseInt(scanner.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.print("Informe apenas números inteiros: ");
+			}
+			
+		}
+		
+    }
+    
     
 }

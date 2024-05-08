@@ -3,11 +3,12 @@ package joaovitor.trabalhoujeverson;
 import java.util.ArrayList;
 import java.util.Scanner;
 import joaovitor.trabalhoujeverson.Entities.CalculadoraVetorial;
-import joaovitor.trabalhoujeverson.Entities.Ponto;
 import joaovitor.trabalhoujeverson.Entities.Vetor;
 
 public class TrabalhoUjeverson {
 
+    
+    
     public static void main(String[] args) {
        
         ArrayList<Vetor> listaVetor = new ArrayList<Vetor>();
@@ -23,7 +24,7 @@ public class TrabalhoUjeverson {
             System.out.println("2- Mostrar todos vetores registrados");
             System.out.println("3- Fazer operações com os vetores (necessários ter registrado ao menos dois vetores)");
             System.out.println("4- Sair");
-            responseSubMenu = scanner.nextInt();
+            responseSubMenu = readInt();
             
             switch(responseSubMenu){
                 
@@ -33,42 +34,38 @@ public class TrabalhoUjeverson {
                         if(listaVetor.size() < 2){
                             System.out.println("Registre ao mínimo dois vetores");
                             for(int i = 0; i < 2; i++){
-                                Ponto a = new Ponto();
-                                a.RegistrarPonto();
-
-                                Ponto b = new Ponto();
-                                b.RegistrarPonto();
-
-                                Vetor vetor = new Vetor(a,b);
-                                listaVetor.add(vetor);
-
-                                System.out.println("Vetor " + i + " registrado!");
+                                
+                                Vetor a = new Vetor(); //instancia um vetor vazio 
+                                a.registrarVetor(); //coloca o x,y,z do vetor
+                                listaVetor.add(a); //adiciona o vetor na lista
+                                
+                                int tamanho = listaVetor.size();
+                                System.out.println("Vetor "+ tamanho +" registrado!");
+                                System.out.println(a.dadosVetor());
                                 
                             }
                         }else{
                             System.out.println("Registrando um vetor!");
-                            Ponto a = new Ponto();
-                            a.RegistrarPonto();
-
-                            Ponto b = new Ponto();
-                            b.RegistrarPonto();
-
-                            Vetor vetor = new Vetor(a,b);
-                            listaVetor.add(vetor);
-
-                            System.out.println("Vetor registrado!");
                             
+                            Vetor a = new Vetor(); //instancia um vetor vazio 
+                            a.registrarVetor(); //coloca o x,y,z do vetor
+                            listaVetor.add(a); //adiciona o vetor na lista
+
+                            int tamanho = listaVetor.size();
+                            System.out.println("Vetor "+ tamanho +" registrado!");
+                            System.out.println(a.dadosVetor());
                         }
                         
                         System.out.println("Deseja registrar mais vetores? (1-SIM/2-NÃO)");
-                        responseRegistrarVetor = scanner.nextInt();
+                        responseRegistrarVetor = readInt();
                         
-                    }while(responseRegistrarVetor != 2);
+                    }while(responseRegistrarVetor == 1);
                     break;
                     
                 case 2:
                     for(int i = 0; i < listaVetor.size(); i++){
-                        System.out.println(listaVetor.get(i).dadosVetor());
+                        
+                        System.out.println("Vetor na Posição " +(i+1)+": "+ listaVetor.get(i).dadosVetor());
                     }
                     break;
                     
@@ -86,7 +83,7 @@ public class TrabalhoUjeverson {
                     System.out.println("4- Ortogonalidade");
                     System.out.println("5- Produto Vetorial");
                     System.out.println("6- Sair");
-                    operation = scanner.nextInt();
+                    operation = readInt();
                     
                     switch(operation){
                         
@@ -118,11 +115,25 @@ public class TrabalhoUjeverson {
             
            
             System.out.println("Deseja Encerrar o programa? (1-SIM/2-NÃO)");
-            responseMainMenu = scanner.nextInt();
+            responseMainMenu = readInt();
             
-            
-            
-        }while(responseMainMenu != 1);
+        }while(responseMainMenu == 2);
+       
+        
         
     }
+    
+    static Scanner scanner = new Scanner(System.in);
+    static int readInt() {
+		while(true) {
+			try {
+				return Integer.parseInt(scanner.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.print("Informe apenas números inteiros: ");
+			}
+			
+		}
+		
+    }
+    
 }
