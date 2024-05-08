@@ -96,7 +96,7 @@ public class TrabalhoUjeverson {
                         case 3: calculadora.AnguloEntreVetores();
                                 break;
                                 
-                        case 4: boolean result = (calculadora.Ortogonalidade());
+                        case 4: boolean result = (calculadora.isOrtogonal());
                                 System.out.println(result);
                                 break;
                         
