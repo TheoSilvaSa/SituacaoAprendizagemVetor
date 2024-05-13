@@ -13,10 +13,9 @@ import java.util.Scanner;
 
 public class Vetor {
     
-    int coordenadaX, coordenadaY, coordenadaZ;
+    double coordenadaX, coordenadaY, coordenadaZ;
     
-    
-    public Vetor(int x, int y, int z){
+    public Vetor(double x, double y, double z){
         this.coordenadaX = x;
         this.coordenadaY = y;
         this.coordenadaZ = z;
@@ -28,18 +27,18 @@ public class Vetor {
         this.coordenadaX = 0;
         this.coordenadaY = 0;
         this.coordenadaZ = 0;
-        int x,y,z;
+        double x,y,z;
         
         System.out.println("Registrando o Vetor");
         
         System.out.println("X: "); 
-        x = readInt(); 
+        x = readDouble(); 
         
         System.out.println("Y: "); 
-        y = readInt();
+        y = readDouble();
         
         System.out.println("Z: (Coloque ZERO se vc deseja um vetor 2D)"); 
-        z = readInt();
+        z = readDouble();
         
         this.coordenadaX = x;
         this.coordenadaY = y;
@@ -52,12 +51,12 @@ public class Vetor {
     }
     
     static Scanner scanner = new Scanner(System.in);
-    static int readInt() {
+    static double readDouble() {
 		while(true) {
 			try {
-				return Integer.parseInt(scanner.nextLine());
+				return Double.parseDouble(scanner.nextLine());
 			} catch (NumberFormatException e) {
-				System.out.print("Informe apenas números inteiros: ");
+				System.out.print("Informe apenas números: ");
 			}
 			
 		}

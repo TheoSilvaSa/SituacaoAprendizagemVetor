@@ -6,11 +6,9 @@ import java.util.Scanner;
 
 public class CalculadoraVetorial {
     
-    List<Vetor> listaVetor;
+    public List<Vetor> listaVetor = new ArrayList<Vetor>();
     
-    public CalculadoraVetorial(ArrayList<Vetor> listaVetor){
-        this.listaVetor = listaVetor;
-    }
+    public CalculadoraVetorial(){}
     
     //LUIZ
     public void Magnitude(){
@@ -84,8 +82,12 @@ public class CalculadoraVetorial {
         System.out.println("O produto escalar é: " + produtoEscalar);
         
         if(produtoEscalar == 0){
+            System.out.println("São ortogonais");
             return true;
-        }else return false;     
+        }else{ 
+            System.out.println("Não são ortogonais");
+            return false;
+        }     
     }
     
     //BIER
@@ -110,5 +112,17 @@ public class CalculadoraVetorial {
 		}
 		
     }
+    
+    static double readDouble() {
+		while(true) {
+			try {
+				return Double.parseDouble(scanner.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.print("Informe apenas números: ");
+			}
+			
+		}
+		
+    }    
     
 }

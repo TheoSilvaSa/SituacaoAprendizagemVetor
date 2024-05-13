@@ -7,12 +7,10 @@ import joaovitor.trabalhoujeverson.Entities.Vetor;
 
 public class TrabalhoUjeverson {
 
-    
-    
     public static void main(String[] args) {
        
-        ArrayList<Vetor> listaVetor = new ArrayList<Vetor>();
         Scanner scanner = new Scanner(System.in);
+        CalculadoraVetorial calculadora = new CalculadoraVetorial();
         
         int responseMainMenu = 0;
         
@@ -31,15 +29,15 @@ public class TrabalhoUjeverson {
                 case 1: 
                     int responseRegistrarVetor = 0;
                     do{
-                        if(listaVetor.size() < 2){
+                        if(calculadora.listaVetor.size() < 2){
                             System.out.println("Registre ao mínimo dois vetores");
                             for(int i = 0; i < 2; i++){
                                 
                                 Vetor a = new Vetor(); //instancia um vetor vazio 
                                 a.registrarVetor(); //coloca o x,y,z do vetor
-                                listaVetor.add(a); //adiciona o vetor na lista
-                                
-                                int tamanho = listaVetor.size();
+                                //listaVetor.add(a); //adiciona o vetor na lista
+                                calculadora.listaVetor.add(a); //adiciona o vetor na lista da calculadora
+                                int tamanho = calculadora.listaVetor.size();
                                 System.out.println("Vetor "+ tamanho +" registrado!");
                                 System.out.println(a.dadosVetor());
                                 
@@ -49,9 +47,9 @@ public class TrabalhoUjeverson {
                             
                             Vetor a = new Vetor(); //instancia um vetor vazio 
                             a.registrarVetor(); //coloca o x,y,z do vetor
-                            listaVetor.add(a); //adiciona o vetor na lista
+                            calculadora.listaVetor.add(a); //adiciona o vetor na lista
 
-                            int tamanho = listaVetor.size();
+                            int tamanho = calculadora.listaVetor.size();
                             System.out.println("Vetor "+ tamanho +" registrado!");
                             System.out.println(a.dadosVetor());
                         }
@@ -63,18 +61,18 @@ public class TrabalhoUjeverson {
                     break;
                     
                 case 2:
-                    for(int i = 0; i < listaVetor.size(); i++){
+                    for(int i = 0; i < calculadora.listaVetor.size(); i++){
                         
-                        System.out.println("Vetor na Posição " +(i+1)+": "+ listaVetor.get(i).dadosVetor());
+                        System.out.println("Vetor na Posição " +(i+1)+": "+ calculadora.listaVetor.get(i).dadosVetor());
                     }
                     break;
                     
                 case 3:
-                    if(listaVetor.isEmpty()){
+                    if(calculadora.listaVetor.isEmpty()){
                         System.out.println("Sua lista está vazia, operações com ela são impossíveis, preencha com pelo menos 2 vetores");
                         break;
                     }
-                    CalculadoraVetorial calculadora = new CalculadoraVetorial(listaVetor);
+                    //CalculadoraVetorial calculadora = new CalculadoraVetorial(listaVetor);
                     int operation = 0;
                     System.out.println("Qual operação desejas fazer?");
                     System.out.println("1- Calcular Magnitude");
