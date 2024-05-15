@@ -49,12 +49,33 @@ public class CalculadoraVetorial {
     
     //GUSTAVO
     public void AnguloEntreVetores(){
-        /*
-        ESCREVER A SOLUÇÃO NESSA FUNÇÃO, PEDINDO PRO USUÁRIO QUAL O VETOR QUE ELE DESEJA
-        SABER A MAGNITUDE, PODE-SE ALTERAR DA MANEIRA QUE DESEJAR ESSA FUNÇÃO
-        E USANDO OS VETORES DA listaVetor que está aqui nesse objeto ali mais acima
-        ESCREVER NA TELA A PARTIR DESSA FUNÇÃO, POR ISSO VOID
-        */
+        
+        int a,b;
+        
+        System.out.println("Selecione 2 vetores da lista de vetores que será apresentada");
+        for(int i = 0; i < listaVetor.size(); i++){
+            System.out.println("Vetor na Posição " +(i+1)+": "+ listaVetor.get(i).dadosVetor());
+        }
+        
+        System.out.println("Informe o primeiro vetor que deseja utilizar");
+        a = readInt();
+        
+        System.out.println("Informe o segundo vetor que deseja utilizar");
+        b = readInt();
+        
+        Vetor vetor1 = listaVetor.get(a-1);
+        Vetor vetor2 = listaVetor.get(b-1);
+        
+        double normaU = Math.sqrt(Math.pow(vetor1.coordenadaX, 2) + Math.pow(vetor1.coordenadaY, 2) + Math.pow(vetor1.coordenadaZ, 2));
+        double normaV = Math.sqrt(Math.pow(vetor2.coordenadaX, 2) + Math.pow(vetor2.coordenadaY, 2) + Math.pow(vetor2.coordenadaZ, 2));
+        
+        double produtoInterno = (vetor1.coordenadaX * vetor2.coordenadaX) + (vetor1.coordenadaY * vetor2.coordenadaY) + (vetor1.coordenadaZ * vetor2.coordenadaZ);
+        
+        double anguloEntreVetores = Math.acos(produtoInterno / (Math.abs(normaU * normaV)));
+        
+        System.out.printf("O angulo entre vetores é: %.2f \n", Math.toDegrees(anguloEntreVetores));
+        
+        System.out.println();
     }
     
     //BIER
