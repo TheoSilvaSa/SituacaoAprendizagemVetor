@@ -13,13 +13,20 @@ public class CalculadoraVetorial {
     //LUIZ
     public void Magnitude(){
         
-        /*
-        ESCREVER A SOLUÇÃO NESSA FUNÇÃO, PEDINDO PRO USUÁRIO QUAL O VETOR QUE ELE DESEJA
-        SABER A MAGNITUDE, PODE-SE ALTERAR DA MANEIRA QUE DESEJAR ESSA FUNÇÃO
-        E USANDO OS VETORES DA listaVetor que está aqui nesse objeto ali mais acima
-        ESCREVER NA TELA A PARTIR DESSA FUNÇÃO, POR ISSO VOID
-        */
+        int a;
         
+        System.out.println("Selecione 1 vetor da lista de vetores que será apresentada");
+        for(int i = 0; i < listaVetor.size(); i++){
+            System.out.println("Vetor na Posição " +(i+1)+": "+ listaVetor.get(i).dadosVetor());
+        }
+        
+        System.out.println("Informe o primeiro vetor que deseja utilizar");
+        a = readInt();
+        
+        Vetor vetor1 = listaVetor.get(a-1);
+        
+        double magnitude = Math.sqrt(Math.pow(vetor1.coordenadaX,2)+Math.pow(vetor1.coordenadaY,2)+Math.pow(vetor1.coordenadaZ,2));
+        System.out.println("A magnitude do vetor é: "+Math.abs(magnitude));
     }
     
     //BIER
