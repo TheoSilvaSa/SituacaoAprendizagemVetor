@@ -58,6 +58,7 @@ public class TrabalhoUjeverson {
                         responseRegistrarVetor = readInt();
                         
                     }while(responseRegistrarVetor == 1);
+                    responseMainMenu = 2;
                     break;
                     
                 case 2:
@@ -65,11 +66,13 @@ public class TrabalhoUjeverson {
                         
                         System.out.println("Vetor na Posição " +(i+1)+": "+ calculadora.listaVetor.get(i).dadosVetor());
                     }
+                    responseMainMenu = 2;
                     break;
                     
                 case 3:
                     if(calculadora.listaVetor.isEmpty()){
                         System.out.println("Sua lista está vazia, operações com ela são impossíveis, preencha com pelo menos 2 vetores");
+                        responseMainMenu = 2;
                         break;
                     }
                     //CalculadoraVetorial calculadora = new CalculadoraVetorial(listaVetor);
@@ -94,8 +97,7 @@ public class TrabalhoUjeverson {
                         case 3: calculadora.AnguloEntreVetores();
                                 break;
                                 
-                        case 4: boolean result = (calculadora.isOrtogonal());
-                                System.out.println(result);
+                        case 4: calculadora.isOrtogonal();
                                 break;
                         
                         case 5: calculadora.ProdutoVetorial();
@@ -105,15 +107,17 @@ public class TrabalhoUjeverson {
                                 break;
                                 
                     }
+                    responseMainMenu = 2;
                     break;
        
-                case 4: 
+                case 4: responseSubMenu = 2;
+                        responseMainMenu =1;
                     break;
             }
             
            
-            System.out.println("Deseja Encerrar o programa? (1-SIM/2-NÃO)");
-            responseMainMenu = readInt();
+            //System.out.println("Deseja Encerrar o programa? (1-SIM/2-NÃO)");
+            //responseMainMenu = readInt();
             
         }while(responseMainMenu == 2);
        

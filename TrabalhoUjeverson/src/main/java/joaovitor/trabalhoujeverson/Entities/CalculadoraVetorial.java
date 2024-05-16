@@ -86,7 +86,7 @@ public class CalculadoraVetorial {
     }
     
     //BIER
-    public boolean isOrtogonal(){
+    public void isOrtogonal(){
         
         int a,b;
         
@@ -111,10 +111,10 @@ public class CalculadoraVetorial {
         
         if(produtoEscalar == 0){
             System.out.println("São ortogonais");
-            return true;
+            //return true;
         }else{ 
             System.out.println("Não são ortogonais");
-            return false;
+            //return false;
         }     
     }
     
