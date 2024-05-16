@@ -11,17 +11,21 @@ public class TrabalhoUjeverson {
        
         Scanner scanner = new Scanner(System.in);
         CalculadoraVetorial calculadora = new CalculadoraVetorial();
-        
+        System.out.println("CONHECEDORES DO OCULTO! SA");
         int responseMainMenu = 0;
         
         do{
             int responseSubMenu = 0;
+            System.out.println();
+            System.out.println("------------------------------------------------------------------------------------------");
             System.out.println("Olá, bem vindo a calculadora de vetores matemáticos!");
             System.out.println("Você tem as seguintes opções: ");
             System.out.println("1- Registrar um novo vetor");
             System.out.println("2- Mostrar todos vetores registrados");
             System.out.println("3- Fazer operações com os vetores (necessários ter registrado ao menos dois vetores)");
             System.out.println("4- Sair");
+            System.out.println("------------------------------------------------------------------------------------------");
+            System.out.println();
             responseSubMenu = readInt();
             
             switch(responseSubMenu){
@@ -78,7 +82,7 @@ public class TrabalhoUjeverson {
                     //CalculadoraVetorial calculadora = new CalculadoraVetorial(listaVetor);
                     int operation = 0;
                     System.out.println("Qual operação desejas fazer?");
-                    System.out.println("1- Calcular Magnitude");
+                    System.out.println("1- Calcular Magnitude/Módulo");
                     System.out.println("2- Produto Escalar");
                     System.out.println("3- Ângulo entre Vetores");
                     System.out.println("4- Ortogonalidade");
@@ -110,7 +114,8 @@ public class TrabalhoUjeverson {
                     responseMainMenu = 2;
                     break;
        
-                case 4: responseSubMenu = 2;
+                case 4: 
+                        responseSubMenu = 2;
                         responseMainMenu =1;
                     break;
             }

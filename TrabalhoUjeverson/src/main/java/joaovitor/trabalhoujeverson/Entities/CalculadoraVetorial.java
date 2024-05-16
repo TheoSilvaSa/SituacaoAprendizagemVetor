@@ -26,7 +26,7 @@ public class CalculadoraVetorial {
         Vetor vetor1 = listaVetor.get(a-1);
         
         double magnitude = Math.sqrt(Math.pow(vetor1.coordenadaX,2)+Math.pow(vetor1.coordenadaY,2)+Math.pow(vetor1.coordenadaZ,2));
-        System.out.println("A magnitude do vetor é: "+Math.abs(magnitude));
+        System.out.println(String.format("A magnitude do vetor é: %,.2f", Math.abs(magnitude)));
     }
     
     //BIER
@@ -51,7 +51,7 @@ public class CalculadoraVetorial {
         double produtoEscalar = (vetor1.coordenadaX*vetor2.coordenadaX)+
                                 (vetor1.coordenadaY*vetor2.coordenadaY)+
                                 (vetor1.coordenadaZ*vetor2.coordenadaZ);
-        System.out.println("O produto escalar é: " + produtoEscalar);
+        System.out.println(String.format("O produto escalar é: %,.2f", produtoEscalar));
     }
     
     //GUSTAVO
@@ -107,7 +107,7 @@ public class CalculadoraVetorial {
         double produtoEscalar = (vetor1.coordenadaX*vetor2.coordenadaX)+
                                 (vetor1.coordenadaY*vetor2.coordenadaY)+
                                 (vetor1.coordenadaZ*vetor2.coordenadaZ);
-        System.out.println("O produto escalar é: " + produtoEscalar);
+        System.out.println(String.format("O produto escalar é: %,.2f", produtoEscalar));
         
         if(produtoEscalar == 0){
             System.out.println("São ortogonais");
@@ -166,6 +166,6 @@ public class CalculadoraVetorial {
 			
 		}
 		
-    }    
+    }
     
 }
